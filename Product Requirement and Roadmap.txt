@@ -1,0 +1,145 @@
+
+---
+
+# 🧾 Product Requirements Document (PRD)
+
+## 1. **Overview**
+
+Build a web app where users can input a Magic: The Gathering deck list and easily search each card on multiple Canadian game store websites (401 Games, The CG Realm, Imaginaire) by opening search result tabs.
+
+---
+
+## 2. **Core Features**
+
+### ✅ Deck Input
+
+- Users can paste a plain-text deck list (1 card per line).  
+
+### ✅ Card Parsing
+
+- App extracts **canonical card names** from the list, stripping quantities.
+    
+
+### ✅ Card Display
+
+- Display each card in a clean list.
+    
+- Include card images (via Scryfall API).
+    
+
+### ✅ Store Search Links
+
+- Each card has a button that opens **store search URLs** in new tabs:
+    
+    - [401 Games](https://store.401games.ca/)
+        
+    - [The CG Realm](https://www.thecgrealm.com/)
+        
+    - [Imaginaire](https://imaginaire.com/)
+    - https://hobbiesville.com/ 
+
+---
+
+## 3. **Stretch Goals (Phase 2+)**
+
+- 🖼️ Show card images from Scryfall.
+    
+- 📂 Save/load deck lists (browser localStorage).
+    
+- 🧭 UI improvements like filters (show only creatures or instants or sorceries or artifacts or lands).
+    
+
+---
+
+## 4. **Technical Requirements**
+
+### Frontend:
+
+- HTML + CSS + JavaScript (Vanilla or React).
+    
+- Responsive UI for desktop and mobile.
+    
+- Dark mode.
+    
+
+### No Backend:
+
+- All logic handled client-side.
+    
+- No user accounts or databases.
+    
+
+---
+
+## 5. **Constraints**
+
+- Must not scrape or violate TOS of stores.
+    
+- Should not open more than ~10–15 tabs at once (browser UX issues).
+    
+- Focused on Canadian MTG stores.
+    
+
+---
+
+# 🛠️ Development Roadmap
+
+## 🟢 Phase 1: Core MVP
+
+### Week 1: Deck Input & Card Parsing
+
+-  Build a textarea for deck input.
+    
+-  Parse each line, strip quantity, deduplicate names.
+    
+-  Show list of unique cards.
+    
+
+### Week 2: Card Search Buttons
+
+-  Create functions to generate search URLs.
+    
+-  Add "Search" button per card to open store tabs.
+    
+-  Add basic CSS styling.
+    
+
+## 🟡 Phase 2: Enhanced UI
+
+### Week 3: Card Images & Tooltips
+
+-  Integrate Scryfall API to show images on hover.
+    
+-  Add basic image previews or modals.
+    
+-  Add loading spinner or placeholder images.
+    
+
+### Week 4: UX Improvements
+
+-  Add "Open All Tabs for This Card" (multi-store).
+    
+-  Persist deck list in localStorage.
+    
+
+## 🔵 Phase 3: Polishing & Additional Features
+
+### Week 5–6: Additional Upgrades
+
+-  Responsive layout + mobile UI.
+    
+-  Dark mode.
+    
+
+---
+
+## ✅ Deliverables
+
+- Fully functional single-page web app.
+    
+- Simple design, clean interface.
+    
+- No server dependencies.
+      
+
+---

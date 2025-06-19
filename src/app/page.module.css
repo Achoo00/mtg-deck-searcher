@@ -1,0 +1,304 @@
+/* app/page.module.css */
+/* Basic Reset & Container */
+.container {
+  max-width: 1200px; /* Wider for two columns */
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #e0e0e0;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px; /* Reduced margin */
+  border-bottom: 1px solid #444;
+  padding-bottom: 15px;
+}
+
+.header h1 {
+  color: #00bcd4;
+  font-size: 2.2rem; /* Slightly smaller */
+}
+.header p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputSection {
+  background-color: #282828;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.inputSection h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #fafafa;
+}
+
+.textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background-color: #333;
+  color: #e0e0e0;
+  font-family: monospace;
+  font-size: 0.9rem;
+  min-height: 120px; /* Reduced height */
+  box-sizing: border-box;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #00bcd4;
+  box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.3);
+}
+
+.button {
+  padding: 10px 18px; /* Slightly smaller padding */
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  font-size: 0.95rem; /* Slightly smaller font */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+/* --- Results Section: Two Columns --- */
+.resultsSection {
+  display: flex;
+  gap: 20px;
+  background-color: #282828;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  min-height: 400px; /* Ensure it has some height */
+}
+
+.leftPanel {
+  flex: 0 0 300px; /* Fixed width for left panel (adjust as needed) */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-right: 20px;
+  border-right: 1px solid #444; /* Separator */
+}
+
+.selectedCardName {
+  font-size: 1.4rem;
+  color: #00bcd4;
+  margin-top: 0;
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+
+.imageContainer {
+  width: 100%;
+  max-width: 280px; /* Max width for image */
+  margin-bottom: 10px;
+  border-radius: 10px; /* Scryfall-like rounded corners */
+  overflow: hidden; /* To clip image to border-radius */
+  border: 1px solid #555;
+  background-color: #111; /* Dark bg for image container */
+}
+
+.cardImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 9px; /* Slightly less than container for inner rounding */
+}
+
+.imageStatus {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.placeholderText {
+  color: #888;
+  font-style: italic;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto; /* Pushes buttons to bottom if leftPanel is flex */
+}
+
+.storeButton {
+  background-color: #4CAF50;
+  text-align: center;
+}
+.storeButton:hover {
+  background-color: #3e8e41;
+}
+
+.openCardAllStoresButton {
+  background-color: #2196F3;
+}
+.openCardAllStoresButton:hover {
+  background-color: #1976D2;
+}
+
+.rightPanel {
+  flex: 1; /* Takes remaining space */
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Important for flex item to shrink if needed */
+}
+
+.cardListHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #444;
+}
+
+.cardListHeader h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #fafafa;
+}
+
+.openAllButtonSmall {
+  background-color: #ff9800;
+  font-size: 0.85rem;
+  padding: 6px 12px;
+}
+.openAllButtonSmall:hover {
+  background-color: #f57c00;
+}
+
+.cardList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto; /* Makes the list scrollable */
+  max-height: 500px; /* Adjust as needed, or use flex grow */
+  flex-grow: 1; /* Allows list to take available space */
+}
+
+.cardListItem {
+  padding: 8px 12px;
+  border-bottom: 1px solid #383838;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  font-size: 0.95rem;
+  color: #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardListItem:hover {
+  background-color: #3f3f3f;
+  color: #fff;
+}
+
+.cardListItem:last-child {
+  border-bottom: none;
+}
+
+.selectedListItem {
+  background-color: #005f73; /* Dark cyan for selected */
+  color: #fff;
+  font-weight: bold;
+}
+.selectedListItem:hover {
+  background-color: #007791;
+}
+
+.listItemStatus, .listItemStatusError {
+    font-size: 0.75rem;
+    color: #888;
+    margin-left: 8px;
+    font-style: italic;
+}
+.listItemStatusError {
+    color: #d9534f; /* A reddish color for errors */
+}
+
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #444;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .resultsSection {
+    flex-direction: column;
+  }
+  .leftPanel {
+    flex: 0 0 auto; /* Reset flex basis */
+    width: 100%;
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid #444; /* Separator for column layout */
+    padding-bottom: 20px;
+    align-items: center; /* Center content in left panel on mobile */
+  }
+  .imageContainer {
+    max-width: 250px; /* Slightly smaller image on mobile */
+  }
+  .selectedCardName {
+    text-align: center;
+  }
+  .rightPanel {
+    max-height: 300px; /* Limit height of card list on mobile */
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+  .header h1 {
+    font-size: 1.8rem;
+  }
+  .button {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+  .leftPanel {
+    align-items: stretch; /* Allow buttons to take full width */
+  }
+  .buttonGroup .button { /* Make buttons in left panel full width on small screens */
+      width: 100%;
+      box-sizing: border-box;
+  }
+}

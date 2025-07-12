@@ -258,6 +258,48 @@
   color: #888;
 }
 
+.sidebar {
+  width: 220px;
+  background-color: #23272f;
+  color: #fafafa;
+  padding: 24px 0 24px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 500px;
+  margin-right: 28px;
+}
+.sidebarTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #00bcd4;
+  text-align: center;
+}
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sidebarNavButton {
+  background: none;
+  border: none;
+  color: #fafafa;
+  font-size: 1rem;
+  text-align: left;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+.sidebarNavButton:hover, .sidebarNavButton.active {
+  background-color: #005f73;
+  color: #fff;
+  font-weight: bold;
+}
+
 /* Responsive adjustments */
 @media (max-width: 900px) {
   .resultsSection {
@@ -280,6 +322,25 @@
   }
   .rightPanel {
     max-height: 300px; /* Limit height of card list on mobile */
+  }
+  .sidebar {
+    width: 100%;
+    min-height: unset;
+    flex-direction: row;
+    margin-right: 0;
+    margin-bottom: 18px;
+    padding: 12px 0;
+    gap: 10px;
+  }
+  .sidebarNav {
+    flex-direction: row;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+  }
+  .sidebarNavButton {
+    font-size: 0.95rem;
+    padding: 8px 10px;
   }
 }
 
